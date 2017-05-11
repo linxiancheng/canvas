@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas-笔记本</title>
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding:10px;
+		}
+		.book{
+			float: left;
+			position: relative;
+			margin-left: 10px; 
+
+		}
+		img{
+			width: 400px;
+			height: 600px;
+			display: block;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+<img src="./img/book.jpg">
+<div class="book">
+    <canvas id="mycanvas" width="400" height="600"></canvas>
+    <canvas id="pox1" width="200" height="600"></canvas>
+   </div>
+  <script type="text/javascript">
+  //画一个笔记本
+    var mycanvas = document.getElementById("mycanvas");
+    mycanvas.style.border = '1px solid #ccc';
+    mycanvas.style.position = 'relative';
+    var cxt = mycanvas.getContext("2d");
+    //从左到右,3个长方形。
+    cxt.fillStyle = "#a1814e";
+    cxt.fillRect(0,0,35,600);
+    cxt.fillStyle = "#c49358";
+    cxt.fillRect(35,0,110,600);
+    cxt.fillStyle = "#dfdcd7";
+    cxt.fillRect(145,0,405,600);
+    //文字
+    //最右边的文字
+    cxt.fillStyle = "#c49358";
+    cxt.font ="40px Arial";
+    cxt.fillText("O f f i c e",215,75);
+    cxt.fillStyle = "#c49358";
+    cxt.font ="12px Arial";
+    cxt.fillText("This high quality notebook suited",200,110);
+    cxt.fillStyle = "#c49358";
+    cxt.font ="12px Arial";
+    cxt.fillText("for writing and composition",200,125);
+    cxt.fillStyle = "#c49358";
+    cxt.font ="12px Arial";
+    cxt.fillText("A5 210 x 148 mm",200,140);
+    //右下角文字
+    cxt.fillStyle = "#be7660";
+    cxt.font ="20px Arial";
+    cxt.fillText("CAIDA财霸",270,570);
+    cxt.fillStyle = "#be7660";
+    cxt.font ="12px Arial";
+    cxt.fillText("®",370,558);
+    //中间的文字
+    //中间下面的文字
+    cxt.fillStyle = "#fff";
+    cxt.font ="40px Arial";
+    cxt.fillText("A5",65,540);
+    cxt.font ="14px Arial";
+    cxt.fillText("8mm x 21line",50,560);
+    //线条
+    cxt.strokeStyle = "#c49358";
+    cxt.lineWidth = 3;
+    cxt.moveTo(200,90);
+    cxt.lineTo(380,90);
+    cxt.stroke();
+    cxt.lineWidth = 1;
+    cxt.moveTo(180,280);
+    cxt.lineTo(390,280);
+    cxt.moveTo(180,300);
+    cxt.lineTo(390,300);
+    cxt.moveTo(180,320);
+    cxt.lineTo(390,320);
+    cxt.moveTo(180,340);
+    cxt.lineTo(390,340);
+    cxt.moveTo(180,360);
+    cxt.lineTo(390,360);
+    cxt.moveTo(180,380);
+    cxt.lineTo(390,380);
+    cxt.moveTo(180,400);
+    cxt.lineTo(390,400);
+    cxt.moveTo(180,420);
+    cxt.lineTo(390,420);
+    cxt.moveTo(180,440);
+    cxt.lineTo(390,440);
+    cxt.moveTo(180,460);
+    cxt.lineTo(390,460);
+    cxt.moveTo(180,480);
+    cxt.lineTo(390,480);
+    cxt.moveTo(180,500);
+    cxt.lineTo(390,500);
+    cxt.stroke();
+ //旋转的文字
+    var cxt1 = document.getElementById("pox1");
+    cxt1.style.position = "absolute";
+    cxt1.style.left = '50px';
+    cxt1.style.top = '30px';
+     var cxt = cxt1.getContext("2d");
+    cxt.fillStyle = "#fff";
+    cxt.font ="70px Arial";
+    cxt.rotate(90*Math.PI/180);
+    cxt.fillText("NOTEBOOK",0,0);
+  </script>
+</body>
+</html>
